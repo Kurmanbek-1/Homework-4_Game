@@ -2,8 +2,6 @@ from random import *
 from enum import Enum
 
 round_number = 0
-
-
 class SuperAbility(Enum):
     CRITICAL_DAMAGE = 1
     HEAL = 2
@@ -14,7 +12,6 @@ class SuperAbility(Enum):
     PROTECTION = 7
     REVIVE = 8
     INVIS = 9
-
 
 class GameEntity:
     def __init__(self, name, health, damage):
@@ -44,8 +41,6 @@ class GameEntity:
 
     def __str__(self):
         return f'{self.__name} health: {self.health} damage: {self.damage}'
-
-
 class Boss(GameEntity):
     def __init__(self, name, health, damage):
         GameEntity.__init__(self, name, health, damage)
@@ -106,7 +101,6 @@ class Warrior(Hero):
         coefficient = randint(2, 6)
         boss.health -= self.damage * coefficient
         print(f'{self.name} Critted boss by {coefficient * self.damage}')
-
 
 class Medic(Hero):
     def __init__(self, name, health, damage, heal_points):
@@ -255,11 +249,11 @@ def is_game_finished(boss, heroes):
 
 
 def start():
-    boss = Boss('Warden', 1900, 50)
-    golem = Golem('Terpila', 450, 0)
+    boss = Boss('Drogon', 1900, 50)
+    golem = Golem('Rock', 450, 0)
     witcher = Witcher('Vanda', 340, 0)
     warrior = Warrior('Ahiles', 280, 10)
-    magic = Magic('Magic', 260, 15)
+    magic = Magic('Strange', 260, 15)
     berserk = Berserk('Berserk', 270, 15)
     doc = Medic('Aibolit', 250, 5, 15)
     thor = Thor('Thor', 300, 15)
